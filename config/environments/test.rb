@@ -37,6 +37,11 @@ Rails.application.configure do
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
 
+  config.react.server_renderer_options = {
+    files: ["react.js", "bundle.js"], # files to load for prerendering
+    replay_console: true,                # if true, console.* will be replayed client-side
+  }
+
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 end

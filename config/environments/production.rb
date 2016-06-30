@@ -76,4 +76,9 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  config.react.variant = :production
+  config.react.server_renderer_options = {
+    files: ["react.js", "bundle.js"], # files to load for prerendering
+    replay_console: true,                # if true, console.* will be replayed client-side
+  }
 end

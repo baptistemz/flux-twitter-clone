@@ -1,0 +1,18 @@
+h1 Update your profile
+
+= form_for @user, url: "/profile" do |f|
+  .row
+    form.col.s12
+      .row
+        .input-field.col.s6
+          = f.text_field :first_name
+          label for="first_name"  First Name
+        .input-field.col.s6
+          = f.text_field :last_name
+          label for="last_name"  Last Name
+      .row
+        .input-field.col.s12
+          = f.text_field :email
+          label for="email"  Email
+      .row
+        button.btn.right type="submit" Save

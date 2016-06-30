@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    title TwitterLikeReact
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+    = stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css"
+    = javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"
+    = javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"
+    = stylesheet_link_tag "https://fonts.googleapis.com/icon?family=Material+Icons"
+    = csrf_meta_tags
+
+  body
+    -if notice
+      p.notice = notice
+    -if alert
+      p.alert = alert
+
+    .right
+      - if user_signed_in?
+        p Welcome #{link_to current_user.display_name, profile_path}, #{link_to 'log out', destroy_user_session_path, method: 'DELETE'}
+      - else
+        p Please #{link_to 'login', new_user_session_path} or #{link_to 'sign up', new_user_registration_path}
+
+    =yield
