@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, Link, hashHistory } from 'react-router';
-import Index from './components/index';
-import Follow from './components/follow'
+import Index from './components/Index';
+import Follow from './components/Follow'
 
 class App extends React.Component{
   render() {

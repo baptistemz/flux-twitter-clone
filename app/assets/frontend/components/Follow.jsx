@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router'
 import UserStore from '../stores/UserStore'
 import UserActions from '../actions/UserActions';
-import UsersList from './UsersList';
 
 
 let getAppState = () =>{

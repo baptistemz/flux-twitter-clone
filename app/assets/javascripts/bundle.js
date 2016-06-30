@@ -62,13 +62,13 @@ var ReactApp =
 	
 	var _reactRouter = __webpack_require__(/*! react-router */ 168);
 	
-	var _index = __webpack_require__(/*! ./components/index */ 230);
+	var _Index = __webpack_require__(/*! ./components/Index */ 230);
 	
-	var _index2 = _interopRequireDefault(_index);
+	var _Index2 = _interopRequireDefault(_Index);
 	
-	var _follow = __webpack_require__(/*! ./components/follow */ 245);
+	var _Follow = __webpack_require__(/*! ./components/Follow */ 245);
 	
-	var _follow2 = _interopRequireDefault(_follow);
+	var _Follow2 = _interopRequireDefault(_Follow);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -110,8 +110,8 @@ var ReactApp =
 	      _react2.default.createElement(
 	        _reactRouter.Route,
 	        { component: App },
-	        _react2.default.createElement(_reactRouter.Route, { path: '/', component: _index2.default }),
-	        _react2.default.createElement(_reactRouter.Route, { path: '/follow', component: _follow2.default })
+	        _react2.default.createElement(_reactRouter.Route, { path: '/', component: _Index2.default }),
+	        _react2.default.createElement(_reactRouter.Route, { path: '/follow', component: _Follow2.default })
 	      )
 	    ), reactNode);
 	  }
@@ -26676,7 +26676,7 @@ var ReactApp =
 /***/ },
 /* 230 */
 /*!**************************************************!*\
-  !*** ./app/assets/frontend/components/index.jsx ***!
+  !*** ./app/assets/frontend/components/Index.jsx ***!
   \**************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
@@ -27918,7 +27918,7 @@ var ReactApp =
 /***/ },
 /* 245 */
 /*!***************************************************!*\
-  !*** ./app/assets/frontend/components/follow.jsx ***!
+  !*** ./app/assets/frontend/components/Follow.jsx ***!
   \***************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
@@ -27940,13 +27940,9 @@ var ReactApp =
 	
 	var _UserStore2 = _interopRequireDefault(_UserStore);
 	
-	var _UserActions = __webpack_require__(/*! ../actions/UserActions */ 249);
+	var _UserActions = __webpack_require__(/*! ../actions/UserActions */ 247);
 	
 	var _UserActions2 = _interopRequireDefault(_UserActions);
-	
-	var _UsersList = __webpack_require__(/*! ./UsersList */ 247);
-	
-	var _UsersList2 = _interopRequireDefault(_UsersList);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -28134,152 +28130,6 @@ var ReactApp =
 
 /***/ },
 /* 247 */
-/*!******************************************************!*\
-  !*** ./app/assets/frontend/components/UsersList.jsx ***!
-  \******************************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(/*! react */ 1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _User = __webpack_require__(/*! ./User */ 248);
-	
-	var _User2 = _interopRequireDefault(_User);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var UsersList = function (_React$Component) {
-	  _inherits(UsersList, _React$Component);
-	
-	  function UsersList() {
-	    _classCallCheck(this, UsersList);
-	
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(UsersList).apply(this, arguments));
-	  }
-	
-	  _createClass(UsersList, [{
-	    key: 'render',
-	    value: function render() {
-	      var users = this.props.users.map(function (user) {
-	        return _react2.default.createElement(_User2.default, _extends({ key: user.id }, user));
-	      });
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(
-	          'ul',
-	          { className: 'collection' },
-	          users
-	        )
-	      );
-	    }
-	  }]);
-	
-	  return UsersList;
-	}(_react2.default.Component);
-	
-	exports.default = UsersList;
-
-/***/ },
-/* 248 */
-/*!*************************************************!*\
-  !*** ./app/assets/frontend/components/User.jsx ***!
-  \*************************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(/*! react */ 1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _UserActions = __webpack_require__(/*! ../actions/UserActions */ 249);
-	
-	var _UserActions2 = _interopRequireDefault(_UserActions);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var User = function (_React$Component) {
-	  _inherits(User, _React$Component);
-	
-	  function User() {
-	    _classCallCheck(this, User);
-	
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(User).apply(this, arguments));
-	  }
-	
-	  _createClass(User, [{
-	    key: 'followUser',
-	    value: function followUser(userId) {
-	      _UserActions2.default.followUser(userId);
-	    }
-	  }, {
-	    key: 'followClasses',
-	    value: function followClasses(following) {
-	      return "secondary-content btn-floating " + (following ? 'green' : 'grey');
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'li',
-	        { key: user.id, className: 'collection-item avatar' },
-	        _react2.default.createElement('img', { src: user.gravatar, className: 'circle' }),
-	        _react2.default.createElement(
-	          'span',
-	          { className: 'title' },
-	          ' ',
-	          user.name
-	        ),
-	        _react2.default.createElement(
-	          'a',
-	          { className: this.followClasses(user.following), onClick: this.followUser(user.id) },
-	          _react2.default.createElement(
-	            'i',
-	            { className: 'material-icons' },
-	            'person_pin'
-	          )
-	        )
-	      );
-	    }
-	  }]);
-	
-	  return User;
-	}(_react2.default.Component);
-	
-	exports.default = User;
-
-/***/ },
-/* 249 */
 /*!*****************************************************!*\
   !*** ./app/assets/frontend/actions/UserActions.jsx ***!
   \*****************************************************/
